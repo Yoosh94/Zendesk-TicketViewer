@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketViewer", "TicketViewer\TicketViewer.csproj", "{024F08C3-C86D-4F03-931D-FE1E8B0BBF84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketViewer.Tests", "TicketViewer.Tests\TicketViewer.Tests.csproj", "{44B5D9D0-AEF8-4964-B803-C8CAC9CE8B50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024F08C3-C86D-4F03-931D-FE1E8B0BBF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024F08C3-C86D-4F03-931D-FE1E8B0BBF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024F08C3-C86D-4F03-931D-FE1E8B0BBF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024F08C3-C86D-4F03-931D-FE1E8B0BBF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B5D9D0-AEF8-4964-B803-C8CAC9CE8B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B5D9D0-AEF8-4964-B803-C8CAC9CE8B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B5D9D0-AEF8-4964-B803-C8CAC9CE8B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B5D9D0-AEF8-4964-B803-C8CAC9CE8B50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
