@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TicketViewer.Controller;
+using TicketViewer.Models;
 
 namespace TicketViewer
 {
@@ -11,7 +13,12 @@ namespace TicketViewer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            APIController.initThings();
+        }
 
+        protected void btn_Click(object sender,EventArgs e)
+        {
+            //APIController.getRequest(AccountDetails.showTicket);
         }
     }
 }
