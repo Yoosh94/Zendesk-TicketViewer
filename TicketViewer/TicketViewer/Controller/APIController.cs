@@ -30,7 +30,18 @@ namespace TicketViewer.Controller
             StreamReader reader = new StreamReader(resStream);
             string value = reader.ReadLine();
             RootObject d = new RootObject();
-            d = JsonConvert.DeserializeObject<RootObject>(value);       
+            d = JsonConvert.DeserializeObject<RootObject>(value);
+            //If there is a second page that needs to be called.
+            if(d.next_page != null)
+            {
+
+            }
+
+
+        }
+
+        public static void callWebRequest(string url)
+        {
 
         }
     }

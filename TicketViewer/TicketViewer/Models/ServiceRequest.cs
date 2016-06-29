@@ -26,15 +26,15 @@ namespace TicketViewer.Models
         public string channel { get; set; }
         public Source source { get; set; }
     }
-
-    public class Ticket
+    
+    public class Tickets
     {
         public string url { get; set; }
-        public int id { get; set; }
+        public int? id { get; set; }
         public string external_id { get; set; }
         public Via via { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime updated_at { get; set; }
+        public DateTime? created_at { get; set; }
+        public DateTime? updated_at { get; set; }
         public string type { get; set; }
         public string subject { get; set; }
         public string raw_subject { get; set; }
@@ -42,29 +42,31 @@ namespace TicketViewer.Models
         public string priority { get; set; }
         public string status { get; set; }
         public string recipient { get; set; }
-        public Int64 requester_id { get; set; }
-        public Int64 submitter_id { get; set; }
-        public Int64 assignee_id { get; set; }
-        public Int64 organization_id { get; set; }
-        public Int64 group_id { get; set; }
-        public List<Int64> collaborator_ids { get; set; }
-        public Int64 forum_topic_id { get; set; }
-        public int problem_id { get; set; }
+
+        public double requester_id { get; set; }
+        public double submitter_id { get; set; }
+        public double assignee_id { get; set; }
+        public double? organization_id { get; set; }
+        public double group_id { get; set; }
+
+        public List<int> collaborator_ids { get; set; }
+        public int? forum_topic_id { get; set; }
+        public int? problem_id { get; set; }
         public bool has_incidents { get; set; }
-        public DateTime due_at { get; set; }
+        public DateTime? due_at { get; set; }
         public List<string> tags { get; set; }
-        public List<object> custom_fields { get; set; }
+        public List<string> custom_fields { get; set; }
         public object satisfaction_rating { get; set; }
-        public List<object> sharing_agreement_ids { get; set; }
-        public List<object> fields { get; set; }
-        public int brand_id { get; set; }
-        public bool allow_channelback { get; set; }
+        public List<string> sharing_agreement_ids { get; set; }
+        public List<string> fields { get; set; }
+        public int? brand_id { get; set; }
+        public bool? allow_channelback { get; set; }
     }
 
     public class RootObject
     {
-        //[JsonProperty("ticket")]
-        public List<Ticket> ticket { get; set; }
+        [JsonProperty("tickets")]
+        public List<Tickets> tickets { get; set; }
         public string next_page { get; set; }
         public object previous_page { get; set; }
         public int count { get; set; }
