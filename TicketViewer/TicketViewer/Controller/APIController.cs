@@ -7,15 +7,17 @@ using System.Net;
 using System.Net.Http;
 using TicketViewer.Models;
 using System.Text;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Xml;
 
 
 namespace TicketViewer.Controller
 {
     public class APIController
     {
-        public static string g; 
-
-        public static void initThings()
+        public static void getAllTickets()
         {
             //do the request
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(AccountDetails.listAllTickets);
@@ -25,14 +27,15 @@ namespace TicketViewer.Controller
             request.Headers.Add("Authorization", "Basic " + encoded);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream resStream = response.GetResponseStream();
-            using (var reader = new StreamReader(resStream))
-            {
-                string value = reader.ReadToEnd();
-                g = value;
-            }
+            StreamReader reader = new StreamReader(resStream);
+            string value = reader.ReadLine();
+            RootObject d = new RootObject();
+            d = JsonConvert.DeserializeObject<RootObject>(value);       
 
         }
     }
 
 
 }
+
+

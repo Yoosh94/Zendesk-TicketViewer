@@ -18,3 +18,5 @@ C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\bin\Micros
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\obj\Debug\TicketViewer.csprojResolveAssemblyReference.cache
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\obj\Debug\TicketViewer.dll
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\obj\Debug\TicketViewer.pdb
+C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\bin\Newtonsoft.Json.dll
+C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer\bin\Newtonsoft.Json.xml
