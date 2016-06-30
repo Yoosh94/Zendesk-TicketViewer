@@ -63,7 +63,7 @@ namespace TicketViewer.Models
         public bool? allow_channelback { get; set; }
     }
 
-    public class RootObject
+    public class RootTicket
     {
         [JsonProperty("tickets")]
         public List<Tickets> tickets { get; set; }

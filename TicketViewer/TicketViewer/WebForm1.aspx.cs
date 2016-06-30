@@ -13,8 +13,8 @@ namespace TicketViewer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            APIController.getAllTickets()
-                ;
+            APIController.callWebRequest(AccountDetails.listAllTickets);
+                
         }
 
         protected void btn_Click(object sender,EventArgs e)
