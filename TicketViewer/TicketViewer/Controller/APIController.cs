@@ -49,14 +49,17 @@ namespace TicketViewer.Controller
             Stream resStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(resStream);
             string valueFromAPI = reader.ReadLine();
-            RootTicket tickets = new RootTicket();
-            tickets = JsonConvert.DeserializeObject<RootTicket>(valueFromAPI);
+            RootTicket rootTickets = new RootTicket();
+            rootTickets = JsonConvert.DeserializeObject<RootTicket>(valueFromAPI);
             //Add the tickets to a list.
-            ResultController.listOfTicket.Add(tickets);
-            //If there is a next page, call this method again.
-            if (tickets.next_page != null)
+            foreach(Tickets ticket in rootTickets.tickets)
             {
-                callWebRequest(tickets.next_page);
+                TicketResults.listOfTickets.Add(ticket);
+            }           
+            //If there is a next page, call this method again.
+            if (rootTickets.next_page != null)
+            {
+                callWebRequest(rootTickets.next_page);
             }
 
         }

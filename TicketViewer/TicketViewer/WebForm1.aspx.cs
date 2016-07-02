@@ -14,7 +14,11 @@ namespace TicketViewer
         protected void Page_Load(object sender, EventArgs e)
         {
             APIController.callWebRequest(AccountDetails.listAllTickets);
-                
+            ticketGridView.DataSource = TicketResults.listOfTickets;
+            ticketGridView.PageSize = 25;
+            ticketGridView.DataBind();
+
+
         }
 
         protected void btn_Click(object sender,EventArgs e)

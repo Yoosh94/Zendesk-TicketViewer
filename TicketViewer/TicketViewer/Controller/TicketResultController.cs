@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using TicketViewer.Controller;
 using TicketViewer.Models;
+using System.Data;
 
 namespace TicketViewer.Controller
 {
-    public static class ResultController
+    public static class TicketResultController
     {
-        public static List<RootTicket> listOfTicket = new List<RootTicket>();
+        public static void SelectAllTickets()
+        {
+
+        }
     }
 }
