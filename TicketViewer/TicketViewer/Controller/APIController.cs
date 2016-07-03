@@ -45,6 +45,7 @@ namespace TicketViewer.Controller
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             string encoded = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(AccountDetails.username + ":" + AccountDetails.password));
             request.Headers.Add("Authorization", "Basic " + encoded);
+            //put try catch here
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream resStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(resStream);

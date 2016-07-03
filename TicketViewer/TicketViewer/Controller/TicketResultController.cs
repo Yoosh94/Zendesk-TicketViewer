@@ -10,9 +10,12 @@ namespace TicketViewer.Controller
 {
     public static class TicketResultController
     {
-        public static void SelectAllTickets()
+        public static string getDescription(int ticketID)
         {
-
+            //var query = from singleTicket in TicketResults.listOfTickets
+            //            where singleTicket.id == ticketID
+            //            select singleTicket.description;
+            return TicketResults.listOfTickets.Find(ticket => ticket.id == ticketID).description;
         }
     }
 }
