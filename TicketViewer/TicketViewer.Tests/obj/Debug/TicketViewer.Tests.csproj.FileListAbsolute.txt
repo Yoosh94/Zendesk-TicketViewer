@@ -12,7 +12,6 @@ C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\TicketViewer.Tests.dll
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\TicketViewer.Tests.pdb
-C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\TicketViewer.dll
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ayush\Desktop\Project\TicketViewer\TicketViewer\TicketViewer.Tests\bin\Debug\TicketViewer.pdb

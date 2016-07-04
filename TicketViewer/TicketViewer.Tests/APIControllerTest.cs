@@ -13,6 +13,35 @@ namespace TicketViewer.Tests
     [TestClass]
     public class APIControllerTest
     {
+
+
+        [TestMethod]
+        public void TestInvalidURLNotZendeskDomain()
+        {
+            try
+            {
+                APIController.callWebRequest(@"https://invalidURL.com.au");
+
+            }
+            catch (WebException we)
+            {
+                Assert.AreEqual(we.Message, "The remote name could not be resolved: 'invalidurl.com.au'");
+            }
+        }
+
+        [TestMethod]
+        public void TestInvalidURLZendeskDomain()
+        {
+            try
+            {
+                APIController.callWebRequest(@"https://firstpointhelp.zendesk.com/api/v2/ticgkets.json");
+
+            }
+            catch (WebException we)
+            {
+                Assert.AreEqual(we.Message, "The remote server returned an error: (404) Not Found.");
+            }
+        }
         [TestMethod]
         public void TestInvalidAuth()
         {
@@ -28,35 +57,5 @@ namespace TicketViewer.Tests
             }
 
         }
-
-        [TestMethod]
-        public void TestInvalidURL()
-        {
-            try
-            {
-                APIController.callWebRequest(@"https://invalidURL.com.au");
-
-            }
-            catch (WebException we)
-            {
-                Assert.AreEqual(we.Message, "The remote server returned an error: (404) Not Found.");
-            }
-        }
-
-
-        //[TestMethod]
-        //public void TestValidOverallWebRequest()
-        //{
-        //    try
-        //    {
-        //        APIController.callWebRequest(AccountDetails.listAllTickets);
-        //        throw new Exception("Good Exception");
-        //    }
-        //    catch(Exception e)
-        //    {
-        //        Assert.AreEqual(e.Message, "Good Exception");
-        //    }
-        //}
-
     }
 }
