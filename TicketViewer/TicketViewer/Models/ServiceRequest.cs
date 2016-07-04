@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Newtonsoft.Json;
 
 namespace TicketViewer.Models
 {
+    //All these classes are used to create a ticket. These classes are modelling against the Zendesk API. If the API changes these classes will need to be changed.
     public class From
     {
     }

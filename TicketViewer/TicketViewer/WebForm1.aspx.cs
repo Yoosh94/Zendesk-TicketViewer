@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Net;
 using System.Web.UI.WebControls;
 using TicketViewer.Controller;
@@ -14,23 +10,30 @@ namespace TicketViewer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Thi function will load all the tickets.
+            //This function will load all the tickets.
             loadAllTickets(AccountDetails.listAllTickets);
         }
 
         //This function will run when a ticket is selected and update the table showing the ticket.
         protected void showTicket(object sender, EventArgs e)
         {
+            //Get the Ticket ID
             int tixID = Int32.Parse(ticketGridView.SelectedRow.Cells[1].Text);
+            //Create a border for the table
             singleTicketView.Border = 1;
+            //Insert the subject that is part of the grid view
             ticketSubject.InnerText = ticketGridView.SelectedRow.Cells[2].Text;
+            //Add titles to the table
             requestorIdLabel.InnerText = "Requestor ID: ";
             ticketDescriptionLabel.InnerText = "Description: ";
             priorityLabal.InnerText = "Priority: ";
             statusLabel.InnerText = "Status: ";
             subjectLabel.InnerText = "Subject: ";
+            //Add the status of the ticket from the gridView
             statusStatus.InnerText = ticketGridView.SelectedRow.Cells[4].Text;
+            //Add the priority from the gridView
             priorityStatus.InnerText = ticketGridView.SelectedRow.Cells[5].Text;
+            //Get the description of the ticket by passing a Ticket ID
             ticketDescription.InnerText = TicketResultController.getDescription(tixID);
             requestorId.InnerText = ticketGridView.SelectedRow.Cells[3].Text;
         }
@@ -47,37 +50,43 @@ namespace TicketViewer
         {
             RootTicket rt = new RootTicket(); ;
             string valueFromAPI = "";
+            //Try create a web request, if it fails throw an error
             try
             {
+                //Get the string represenation of response
                 valueFromAPI = APIController.callWebRequest(url);
+                //COnvert the string to an object
                 rt = TicketResultController.convertStringToObject(valueFromAPI);
-                //Need to now check for page two?
+                //Add the new ticket to the correct Lists
                 TicketResultController.addToTemp(rt);
                 TicketResultController.moveTempRootTickets();
                 TicketResultController.clearTempRootTicket();
                 TicketResultController.populateTicketFromRootTicket();
                 TicketResultController.moveTempTickets();
                 TicketResultController.clearTempTicket();
+                //Add the list of tickets as the data source for the grid view.
                 ticketGridView.DataSource = TicketResults.listOfTickets;
+                //Have the list display 25 tickets on one page.
                 ticketGridView.PageSize = 25;
+                //Create two event handlers for when then page is changed and when a ticket is selected
                 ticketGridView.PageIndexChanging += handlePageIndexing;
                 ticketGridView.SelectedIndexChanged += showTicket;
+                //FInally bind all the data to the grid view
                 ticketGridView.DataBind();
             }
             catch (WebException we)
             {
                 errorMessageLabel.Text = we.Message;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 errorMessageLabel.Text = ex.Message;
             }
+            //If there is a second page, (Zendesk API only returns a max of 100 per response) call the function again and repeat the process
             if (rt.next_page != null)
             {
                 loadAllTickets(rt.next_page);
             }
         }
-
-
     }
 }

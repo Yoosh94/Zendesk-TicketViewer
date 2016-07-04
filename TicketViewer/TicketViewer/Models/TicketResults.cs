@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-
-
 namespace TicketViewer.Models
 {
     public static class TicketResults
