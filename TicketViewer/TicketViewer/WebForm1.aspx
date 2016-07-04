@@ -13,8 +13,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <asp:Label ID="errorMessageLabel" runat="server"></asp:Label>
+        </div>
     <div>
-        <asp:GridView ID="ticketGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" autogeneratecolumns="false" AllowPaging="true" AllowSorting="true" AutoGenerateSelectButton="True">
+        <asp:GridView ID="ticketGridView" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" autogeneratecolumns="false" AllowPaging="true" AutoGenerateSelectButton="True">
             <Columns>
                 <asp:BoundField DataField="id"  HeaderText="Ticket ID"/>
                 <asp:BoundField DataField="subject" HeaderText="Subject"/>
@@ -61,6 +64,7 @@
                 <td runat="server" id="priorityStatus"></td>
             </tr>
         </table>
+        
     </div>       
     </form>
 

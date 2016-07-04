@@ -17,56 +17,18 @@ namespace TicketViewer.Controller
 {
     public class APIController
     {
-        //public static void getAllTickets()
-        //{
-        //    //do the request
-        //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(AccountDetails.listAllTickets);
-        //    string username = "ayush_94@hotmail.com";
-        //    string password = "Ageofkings12#4";
-        //    string encoded = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
-        //    request.Headers.Add("Authorization", "Basic " + encoded);
-        //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-        //    Stream resStream = response.GetResponseStream();
-        //    StreamReader reader = new StreamReader(resStream);
-        //    string value = reader.ReadLine();
-        //    RootTicket d = new RootTicket();
-        //    d = JsonConvert.DeserializeObject<RootTicket>(value);
-        //    //If there is a second page that needs to be called.
-        //    if(d.next_page != null)
-        //    {
-
-        //    }
-
-
-        //}
-
-        public static void callWebRequest(string url)
+        public static string callWebRequest(string url)
         {
+
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             string encoded = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(AccountDetails.username + ":" + AccountDetails.password));
             request.Headers.Add("Authorization", "Basic " + encoded);
-            //put try catch here
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream resStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(resStream);
-            string valueFromAPI = reader.ReadLine();
-            RootTicket rootTickets = new RootTicket();
-            rootTickets = JsonConvert.DeserializeObject<RootTicket>(valueFromAPI);
-            //Add the tickets to a list.
-            foreach(Tickets ticket in rootTickets.tickets)
-            {
-                TicketResults.listOfTickets.Add(ticket);
-            }           
-            //If there is a next page, call this method again.
-            if (rootTickets.next_page != null)
-            {
-                callWebRequest(rootTickets.next_page);
-            }
-
+            return reader.ReadLine();
         }
     }
-
-
 }
 
 
