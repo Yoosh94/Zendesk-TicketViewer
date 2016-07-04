@@ -23,3 +23,4 @@ This ASP.NET webpage is built using the .NET framework. To be able to run the te
 Since .NET was created for Windows you will need to get virtualisation software. This youtube [link] (https://www.youtube.com/watch?v=0d1Jo10lmD4) shows you how to install the virtualisation software and Visual Studio.
 - [Parallels](http://www.parallels.com/au/products/desktop/download/)
 - Once installed and running instructions are the same for Windows.
+- If you would like to use Visual Studio **Code** instead of Visual Studio instructions can be found [here](https://docs.asp.net/en/latest/tutorials/your-first-mac-aspnet.html) to set it up
