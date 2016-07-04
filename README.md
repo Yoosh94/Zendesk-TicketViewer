@@ -11,7 +11,7 @@ This ASP.NET webpage is built using the .NET framework. To be able to run the te
 
 ### How to run my Program
 
-1. Fork my repo and navigate to TicketViewer --> TicketViewer.sln and double click
+1. Download or clone my repo and navigate to TicketViewer --> TicketViewer.sln and double click
 2. Once opened in Visual Studio click the green play button which will have the name of a browser next to it.
 
 ### How to run unit tests in Visual Studio
