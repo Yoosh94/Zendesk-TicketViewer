@@ -1,11 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TicketViewer.Controller;
-using System.Web;
 using TicketViewer.Models;
 using System.Net;
-using System.IO;
-using System.Text;
+
 
 
 namespace TicketViewer.Tests
@@ -13,8 +11,6 @@ namespace TicketViewer.Tests
     [TestClass]
     public class APIControllerTest
     {
-
-
         [TestMethod]
         public void TestInvalidURLNotZendeskDomain()
         {

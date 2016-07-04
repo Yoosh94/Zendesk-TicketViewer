@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using TicketViewer.Controller;
-using TicketViewer.Models;
-using System.Data;
+﻿using TicketViewer.Models;
 using Newtonsoft.Json;
 
 namespace TicketViewer.Controller
